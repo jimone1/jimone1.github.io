@@ -17,8 +17,8 @@ popup <- paste("<div class='leaflet-popup-scrolled' style='max-width:600px;max-h
 
 
 map = leaflet() %>%
-    addTiles( ) %>%
-    addMarkers(data = df, lat = df$Latitude, lng = df$Longitude, popup = popup )
+  addTiles( ) %>%
+  addMarkers(data = df, lat = df$Latitude, lng = df$Longitude, popup = popup )
 
 map
 
