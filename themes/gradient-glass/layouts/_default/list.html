@@ -1,0 +1,15 @@
+{{ define "main" }}
+<section class="section-container">
+  <h1 class="section-title">{{ .Title }}</h1>
+  <div class="content-body glass-card">
+    {{ .Content }}
+  </div>
+  {{ if .Pages }}
+  <div class="blog-grid">
+    {{ range .Pages }}
+      {{ partial "blog-card.html" . }}
+    {{ end }}
+  </div>
+  {{ end }}
+</section>
+{{ end }}

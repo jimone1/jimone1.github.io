@@ -1,0 +1,18 @@
+{{ define "main" }}
+  {{ partial "hero.html" . }}
+  {{ partial "experience.html" . }}
+
+  <section id="blog" class="section-container">
+    <h2 class="section-title fade-up">{{ i18n "blog_title" }}</h2>
+    <div class="blog-grid">
+      {{ range first 6 (where .Site.RegularPages "Section" "blog") }}
+        <div class="fade-up">
+          {{ partial "blog-card.html" . }}
+        </div>
+      {{ end }}
+    </div>
+    <div class="section-cta fade-up">
+      <a href="{{ "blog/" | relLangURL }}" class="btn-glass">{{ i18n "read_more" }} &rarr;</a>
+    </div>
+  </section>
+{{ end }}

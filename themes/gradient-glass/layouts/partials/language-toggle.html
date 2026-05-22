@@ -1,0 +1,13 @@
+{{ if .IsTranslated }}
+  {{ range .Translations }}
+  <a href="{{ .RelPermalink }}" class="lang-toggle" hreflang="{{ .Lang }}">
+    {{ if eq .Lang "en" }}EN{{ else }}中文{{ end }}
+  </a>
+  {{ end }}
+{{ else }}
+  {{ if eq .Lang "en" }}
+  <a href="{{ "/zh/" | absURL }}" class="lang-toggle">中文</a>
+  {{ else }}
+  <a href="{{ "/en/" | absURL }}" class="lang-toggle">EN</a>
+  {{ end }}
+{{ end }}

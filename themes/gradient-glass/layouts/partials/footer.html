@@ -1,0 +1,11 @@
+<footer class="site-footer">
+  <div class="footer-container">
+    <p>&copy; {{ now.Year }} {{ .Site.Params.author }}. {{ i18n "footer_copyright" }}</p>
+  </div>
+</footer>
+<script>
+  document.querySelector('.nav-mobile-toggle').addEventListener('click', function() {
+    document.querySelector('.nav-links').classList.toggle('nav-open');
+    this.classList.toggle('active');
+  });
+</script>

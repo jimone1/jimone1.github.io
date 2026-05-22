@@ -1,0 +1,71 @@
+baseURL: "https://jimwan.github.io/"
+title: "Jim Wan"
+languageCode: en
+defaultContentLanguage: en
+defaultContentLanguageInSubdir: true
+
+languages:
+  en:
+    languageName: English
+    contentDir: content/en
+    weight: 1
+    params:
+      description: "Personal website of Jim Wan"
+    menus:
+      main:
+        - identifier: about
+          name: About
+          url: /about/
+          weight: 1
+        - identifier: experience
+          name: Experience
+          url: /experience/
+          weight: 2
+        - identifier: blog
+          name: Blog
+          url: /blog/
+          weight: 3
+        - identifier: photos
+          name: Photos
+          url: /photos/
+          weight: 4
+  zh:
+    languageName: 中文
+    contentDir: content/zh
+    weight: 2
+    params:
+      description: "Jim Wan 的个人网站"
+    menus:
+      main:
+        - identifier: about
+          name: 关于我
+          url: /about/
+          weight: 1
+        - identifier: experience
+          name: 工作经历
+          url: /experience/
+          weight: 2
+        - identifier: blog
+          name: 碎碎念
+          url: /blog/
+          weight: 3
+        - identifier: photos
+          name: 照片
+          url: /photos/
+          weight: 4
+
+params:
+  author: "Yiyao (Jim) Wan"
+  avatarURL: "/images/avatar.jpg"
+  bgmEnabled: true
+
+theme: gradient-glass
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    style: dracula
+
+enableRobotsTXT: true

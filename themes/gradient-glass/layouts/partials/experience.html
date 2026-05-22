@@ -1,0 +1,15 @@
+<section id="experience" class="section-container">
+  <h2 class="section-title fade-up">{{ i18n "experience_title" }}</h2>
+  <div class="timeline">
+    {{ $dataFile := printf "experience_%s" .Lang }}
+    {{ range index .Site.Data $dataFile }}
+    <div class="timeline-item glass-card fade-up">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">{{ .period }}</div>
+      <h3 class="timeline-role">{{ .role }}</h3>
+      <h4 class="timeline-company">{{ .company }}</h4>
+      <p class="timeline-description">{{ .description }}</p>
+    </div>
+    {{ end }}
+  </div>
+</section>

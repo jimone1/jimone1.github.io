@@ -1,0 +1,16 @@
+<article class="blog-card glass-card">
+  <a href="{{ .RelPermalink }}" class="blog-card-link">
+    <div class="blog-card-content">
+      <time class="blog-card-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+      <h3 class="blog-card-title">{{ .Title }}</h3>
+      {{ with .Params.summary }}
+      <p class="blog-card-summary">{{ . }}</p>
+      {{ end }}
+      {{ with .Params.tags }}
+      <div class="blog-card-tags">
+        {{ range . }}<span class="tag">{{ . }}</span>{{ end }}
+      </div>
+      {{ end }}
+    </div>
+  </a>
+</article>

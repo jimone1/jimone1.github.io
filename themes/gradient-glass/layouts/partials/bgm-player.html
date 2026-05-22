@@ -1,0 +1,16 @@
+{{ if .Site.Params.bgmEnabled }}
+<div id="bgm-player" class="bgm-player" aria-label="Background music player">
+  <audio id="bgm-audio" loop preload="none">
+    <source src="/audio/lofi-track-1.mp3" type="audio/mpeg">
+  </audio>
+  <button id="bgm-toggle" class="bgm-toggle glass-card"
+          aria-label="{{ i18n "bgm_play" }}"
+          title="{{ i18n "bgm_play" }}">
+    <span class="bgm-icon">&#9835;</span>
+    <span class="bgm-bars">
+      <span></span><span></span><span></span><span></span>
+    </span>
+  </button>
+</div>
+<script src="/js/bgm-player.js" defer></script>
+{{ end }}

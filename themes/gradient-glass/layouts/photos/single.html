@@ -1,0 +1,23 @@
+{{ define "main" }}
+<section class="section-container gallery-page">
+  <h1 class="section-title fade-up">{{ .Title }}</h1>
+  <div class="gallery">
+    {{ $captionKey := printf "caption_%s" .Lang }}
+    {{ range .Site.Data.photos }}
+    <figure class="gallery-item fade-up">
+      <div class="gallery-frame glass-card">
+        <img
+          src="/images/gallery/{{ .file }}"
+          alt="{{ index . $captionKey }}"
+          class="gallery-img"
+          loading="lazy"
+        >
+      </div>
+      {{ with index . $captionKey }}
+      <figcaption class="gallery-caption">{{ . }}</figcaption>
+      {{ end }}
+    </figure>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

@@ -1,0 +1,22 @@
+nav_about:
+  other: "关于我"
+nav_experience:
+  other: "工作经历"
+nav_blog:
+  other: "碎碎念"
+hero_greeting:
+  other: "你好，我是"
+hero_subtitle:
+  other: "Meta 软件工程师"
+experience_title:
+  other: "工作经历"
+blog_title:
+  other: "碎碎念"
+read_more:
+  other: "阅读更多"
+bgm_play:
+  other: "播放 BGM"
+bgm_pause:
+  other: "暂停 BGM"
+footer_copyright:
+  other: "保留所有权利。"

@@ -1,0 +1,10 @@
+{{ define "main" }}
+<section class="section-container">
+  <h1 class="section-title">{{ i18n "blog_title" }}</h1>
+  <div class="blog-grid">
+    {{ range .Pages }}
+      {{ partial "blog-card.html" . }}
+    {{ end }}
+  </div>
+</section>
+{{ end }}

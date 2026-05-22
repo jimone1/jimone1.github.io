@@ -1,0 +1,117 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-primary);
+  color: var(--text-primary);
+  background: #fdf6ee;
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.7;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: var(--gradient-bg);
+    z-index: -3;
+  }
+}
+
+.bg-glow {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.5;
+  z-index: -2;
+  pointer-events: none;
+  animation: float-glow 20s ease-in-out infinite;
+
+  &--1 {
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(196, 149, 106, 0.2) 0%, transparent 70%);
+    top: -10%;
+    right: -10%;
+    animation-duration: 25s;
+  }
+
+  &--2 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(212, 165, 116, 0.15) 0%, transparent 70%);
+    bottom: 10%;
+    left: -10%;
+    animation-duration: 30s;
+    animation-delay: -5s;
+  }
+
+  &--3 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(139, 115, 85, 0.12) 0%, transparent 70%);
+    top: 40%;
+    right: 20%;
+    animation-duration: 22s;
+    animation-delay: -10s;
+  }
+}
+
+@keyframes float-glow {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(30px, -30px) scale(1.05); }
+  50% { transform: translate(-20px, 20px) scale(0.95); }
+  75% { transform: translate(15px, 10px) scale(1.02); }
+}
+
+a {
+  color: var(--text-accent);
+  text-decoration: none;
+  transition: color 0.3s var(--transition-smooth);
+
+  &:hover {
+    color: #c4956a;
+  }
+}
+
+h1, h2, h3, h4 {
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #2a2018;
+}
+
+h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); }
+h2 { font-size: clamp(1.6rem, 3.5vw, 2.5rem); }
+h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); }
+
+code, pre {
+  font-family: var(--font-mono);
+}
+
+pre {
+  background: rgba(61, 50, 37, 0.05);
+  padding: 1.5rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(139, 115, 85, 0.1);
+  overflow-x: auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+::selection {
+  background: rgba(196, 149, 106, 0.3);
+  color: #2a2018;
+}

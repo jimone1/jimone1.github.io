@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="{{ .Lang }}">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body>
+  <div class="bg-glow bg-glow--1"></div>
+  <div class="bg-glow bg-glow--2"></div>
+  <div class="bg-glow bg-glow--3"></div>
+  {{ partial "header.html" . }}
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+  {{ partial "bgm-player.html" . }}
+  {{ partial "footer.html" . }}
+  <script>
+    window._fadeObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(function(el) {
+      window._fadeObserver.observe(el);
+    });
+  </script>
+  <script src="/js/pjax.js" defer></script>
+</body>
+</html>

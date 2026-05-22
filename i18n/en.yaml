@@ -1,0 +1,22 @@
+nav_about:
+  other: "About"
+nav_experience:
+  other: "Experience"
+nav_blog:
+  other: "Blog"
+hero_greeting:
+  other: "Hi, I'm"
+hero_subtitle:
+  other: "Software Engineer @ Meta"
+experience_title:
+  other: "Work Experience"
+blog_title:
+  other: "Blog"
+read_more:
+  other: "Read More"
+bgm_play:
+  other: "Play BGM"
+bgm_pause:
+  other: "Pause BGM"
+footer_copyright:
+  other: "All rights reserved."

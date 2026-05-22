@@ -1,0 +1,47 @@
+@mixin glass($bg: var(--glass-bg), $blur: var(--glass-blur)) {
+  background: $bg;
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--glass-shadow);
+}
+
+@mixin gradient-border {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: var(--gradient-border);
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s var(--transition-smooth);
+    pointer-events: none;
+  }
+}
+
+.glass-card {
+  @include glass;
+  @include gradient-border;
+  padding: 2rem;
+  transition: all 0.4s var(--transition-smooth);
+
+  &:hover {
+    background: var(--glass-bg-hover);
+    border-color: var(--glass-border-hover);
+    box-shadow: var(--glass-shadow-hover);
+    transform: translateY(-6px);
+
+    &::before {
+      opacity: 1;
+    }
+  }
+}

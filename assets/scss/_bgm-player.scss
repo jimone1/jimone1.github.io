@@ -1,0 +1,66 @@
+.bgm-player {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+}
+
+.bgm-toggle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include glass;
+  padding: 0;
+  color: var(--text-primary);
+  font-size: 1.3rem;
+  transition: all 0.4s var(--transition-smooth);
+  box-shadow: 0 4px 24px rgba(139, 115, 85, 0.1), 0 0 0 1px rgba(139, 115, 85, 0.08);
+
+  &:hover {
+    transform: scale(1.12);
+    box-shadow: 0 8px 32px rgba(139, 115, 85, 0.15), 0 0 0 1px rgba(139, 115, 85, 0.15);
+  }
+
+  &.playing {
+    box-shadow: 0 8px 32px rgba(196, 149, 106, 0.2), 0 0 0 1px rgba(196, 149, 106, 0.2);
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 8px 32px rgba(139, 115, 85, 0.15), 0 0 0 1px rgba(139, 115, 85, 0.15); }
+  50% { box-shadow: 0 8px 40px rgba(196, 149, 106, 0.25), 0 0 0 1px rgba(196, 149, 106, 0.25); }
+}
+
+.bgm-icon {
+  display: inline;
+}
+
+.bgm-bars {
+  display: none;
+  align-items: flex-end;
+  gap: 3px;
+  height: 18px;
+
+  span {
+    width: 3px;
+    background: linear-gradient(to top, #8b7355, #c4956a);
+    border-radius: 3px;
+    animation: bar-bounce 0.8s ease-in-out infinite;
+
+    &:nth-child(1) { height: 60%;  animation-delay: 0.0s; }
+    &:nth-child(2) { height: 100%; animation-delay: 0.15s; }
+    &:nth-child(3) { height: 40%;  animation-delay: 0.3s; }
+    &:nth-child(4) { height: 80%;  animation-delay: 0.45s; }
+  }
+}
+
+@keyframes bar-bounce {
+  0%, 100% { transform: scaleY(0.3); }
+  50% { transform: scaleY(1); }
+}

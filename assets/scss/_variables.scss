@@ -1,0 +1,32 @@
+:root {
+  --gradient-primary: linear-gradient(135deg, #8b7355 0%, #a0845c 50%, #c4956a 100%);
+  --gradient-accent: linear-gradient(135deg, #c4956a 0%, #d4a574 100%);
+  --gradient-bg: linear-gradient(135deg, #fdf6ee 0%, #f5ebe0 25%, #faf3eb 50%, #f0e6d6 100%);
+  --gradient-card: linear-gradient(135deg, rgba(139, 115, 85, 0.06), rgba(196, 149, 106, 0.03));
+  --gradient-border: linear-gradient(135deg, rgba(139, 115, 85, 0.4), rgba(196, 149, 106, 0.4));
+
+  --glass-bg: rgba(255, 255, 255, 0.5);
+  --glass-bg-hover: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(139, 115, 85, 0.1);
+  --glass-border-hover: rgba(139, 115, 85, 0.2);
+  --glass-blur: 20px;
+  --glass-shadow: 0 8px 32px rgba(139, 115, 85, 0.08);
+  --glass-shadow-hover: 0 16px 48px rgba(139, 115, 85, 0.12);
+
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --text-primary: #3d3225;
+  --text-secondary: #8c7a66;
+  --text-accent: #8b7355;
+  --text-accent-bright: #a0845c;
+
+  --section-padding: clamp(4rem, 10vw, 8rem);
+  --container-max: 1100px;
+
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
+
+  --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
