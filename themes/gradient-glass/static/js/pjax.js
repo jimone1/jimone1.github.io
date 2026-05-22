@@ -11,24 +11,26 @@
     var doc = parser.parseFromString(html, 'text/html');
     var newMain = doc.querySelector('main');
     var newTitle = doc.querySelector('title');
+    var newHeader = doc.querySelector('.site-header');
+    var newLang = doc.documentElement.getAttribute('lang');
     var oldMain = document.querySelector('main');
+    var oldHeader = document.querySelector('.site-header');
 
     if (newMain && oldMain) {
       oldMain.innerHTML = newMain.innerHTML;
+    }
+
+    if (newHeader && oldHeader) {
+      oldHeader.innerHTML = newHeader.innerHTML;
     }
 
     if (newTitle) {
       document.title = newTitle.textContent;
     }
 
-    // Update active nav links
-    var currentPath = new URL(url).pathname;
-    document.querySelectorAll('.nav-link').forEach(function (link) {
-      link.classList.remove('active');
-      if (currentPath.indexOf(link.getAttribute('href')) === 0) {
-        link.classList.add('active');
-      }
-    });
+    if (newLang) {
+      document.documentElement.setAttribute('lang', newLang);
+    }
 
     // Re-run scroll animations for new content
     document.querySelectorAll('.fade-up').forEach(function (el) {
@@ -42,7 +44,7 @@
 
   document.addEventListener('click', function (e) {
     var a = e.target.closest('a');
-    if (!a || !isLocalLink(a) || a.hasAttribute('data-no-pjax')) return;
+    if (!a || !isLocalLink(a)) return;
 
     e.preventDefault();
 
