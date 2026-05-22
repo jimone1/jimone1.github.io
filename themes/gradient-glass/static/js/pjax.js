@@ -42,7 +42,7 @@
 
   document.addEventListener('click', function (e) {
     var a = e.target.closest('a');
-    if (!a || !isLocalLink(a)) return;
+    if (!a || !isLocalLink(a) || a.hasAttribute('data-no-pjax')) return;
 
     e.preventDefault();
 
